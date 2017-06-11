@@ -1,0 +1,116 @@
+
+
+<div class="content-wrapper">
+
+
+  <div class="container">
+
+
+    <section class="content">
+
+      <div class="row">
+
+        <div class="col-md-3">
+
+          <!-- Profile Image -->
+          <div class="box box-primary">
+            <div class="box-body box-profile">
+
+              <h3 class="profile-username text-center">{{restaurant.name}}</h3>
+
+              <p class="text-muted text-center">{{restaurant.place}} - {{restaurant.ward_name}} - {{restaurant.district_name}} - {{restaurant.province_name}}</p>
+
+              <ul class="list-group list-group-unbordered">
+                <li class="list-group-item" ng-repeat="food in foods">
+                <b><a ui-sref="home.user-restaurant-food-edit({restaurantid: restaurant.id,id: food.id})">{{food.name}}</a></b>
+                </li>
+              </ul>
+
+              <a ui-sref="home.user-restaurant-food-create({id: restaurant.id})" class="btn btn-primary btn-block"><b>Thêm món ăn</b></a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+        <div class="col-md-9">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Cập nhật món</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form class="form-horizontal" ng-submit="save({food: food})">
+                <div class="box-body">
+
+                  <div class="form-group" ng-class="{'has-error': hasername}">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Tên món</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputEmail3" ng-model="food.name" placeholder="Tên món">
+                      <p class="text-danger">{{ ername }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group" ng-class="{'has-error': haserprice}">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Giá</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputEmail3" ng-model="food.price" placeholder="Giá">
+                      <p class="text-danger">{{ erprice }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group" ng-class="{'has-error': haserdescription}">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Mô tả</label>
+
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputEmail3" ng-model="food.description" placeholder="mô tả">
+                      <p class="text-danger">{{ erdescription }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Hình ảnh cũ</label>
+                    <div class="col-sm-8">
+                      <div  class="image" ng-repeat="img in oldimg">
+                        <img ng-src="public/images/{{img.image}}" alt="">
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="form-group" ng-class="{'has-error': haserimage}">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Hình ảnh mới</label>
+
+                    <div class="col-sm-8" nv-file-drop="" uploader="uploader">
+                      <!-- Show images -->     
+                      <div  class="image" ng-repeat="item in uploader.queue">
+                        <div ng-thumb="{ file: item._file, height: 100, width: 100 }"></div>
+                        <button class="remove" ng-click="item.remove()">x</button>
+                      </div> 
+
+                  <!-- <div drop-zone ng-model="files" class="one">
+                    <p>+</p>
+                  </div> -->
+                  <input type="file" class="one" nv-file-select="" uploader="uploader" multiple />
+                </div>
+              </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <div class="col-sm-offset-1 col-sm-10">
+                <button type="submit" class="btn btn-block btn-lg btn-primary btn-flat pull-right">Cập nhật</button>
+              </div>
+            </div>
+            <!-- /.box-footer -->
+          </form>
+
+        </div>
+        <!-- /.box-body -->
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+</section>
+</div>
+
+<!-- /.container -->
+</div>

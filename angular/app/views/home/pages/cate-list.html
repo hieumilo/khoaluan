@@ -1,0 +1,28 @@
+<div ng-hide="hasData">
+  Chưa có
+</div>
+<div ng-show="hasData">
+  <div class="col-md-4" style="padding: 0 5px 0 5px; margin-top: -10px;" ng-repeat="item in res">
+    <!-- Box Comment -->
+    <div class="box box-widget">
+      
+      <!-- /.box-header -->
+      <div class="box-body">
+        <a ui-sref="home.restaurant({name: item.slug, id: item.id})"><img class="img-responsive pad" style="padding: 0 0 10px 0" ng-src="public/images/{{item.image}}" alt="Photo"></a>
+
+        <a ui-sref="home.restaurant({name: item.slug, id: item.id})"><h4>{{item.name}}</h4></a>
+        <p>{{item.place}} - {{item.ward_name}} - {{item.district_name}}</p>
+        <p>Loại hình: <a ui-sref="home.category.list({name: item.category_slug, id: item.category_id})">{{item.category_name}}</a></p>
+        <!-- <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
+        <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
+        <span class="pull-right text-muted">127 likes - 3 comments</span> -->
+      </div>
+      <!-- /.box-body -->
+      
+    </div>
+    <!-- /.box -->
+  </div>
+
+
+  <button type="button" class="btn btn-info btn-block btn-flat" ng-click="loadMore()">Load more</button>
+</div>

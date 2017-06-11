@@ -1,0 +1,109 @@
+
+.image {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.image img {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: whitesmoke;
+  border-radius: 5px;
+  font: caption;
+  text-align: center;
+  box-sizing: border-box;
+  left: 0;
+  vertical-align: super;
+}
+
+.remove {
+  position: absolute;
+  right:0;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+  
+}
+
+.image:hover .remove {
+  opacity: 1;
+}
+
+
+.one {
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: whitesmoke;
+  border-radius: 5px;
+  font: caption;
+  text-align: center;
+  border: 2px dashed #ddd; 
+  box-sizing: border-box;
+}
+.one p {
+  padding-top: 16px;
+  font-size: 16px;
+}
+.one span {
+  display: block;
+  font-size: 10px;
+}
+.one img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+}
+.one input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 9999px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.two {
+  display: block;
+  margin: 30px;
+}
+.two span {
+  display: none;
+}
+.two.drop-zone span {
+  display: block;
+  font-size: 10px;
+}
+
+
+.star-rating {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+    .star-rating .star {
+      padding: 1px;
+      color: #ddd;
+      font-size: 20px;
+      text-shadow: .05em .05em #aaa;
+      list-style-type: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .star-rating .star.filled {
+      color: #fd0;
+    }
+    .star-rating.readonly .star.filled {
+      color: #666;
+    }

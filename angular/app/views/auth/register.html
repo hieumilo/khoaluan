@@ -1,0 +1,83 @@
+
+<div class="content-wrapper">
+    <div class="container">
+      <section class="content">
+      <div class="col-sm-offset-2 col-sm-8">
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border text-center">
+              <h3 class="box-title">Đăng ký tài khoản</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" method="post" ng-submit="signup()" name="loginForm">
+              <div class="box-body">
+
+                <div class="form-group" ng-class="{'has-error': hasername}">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Họ tên</label>
+
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inputEmail3" ng-model="user.name" placeholder="Name">
+                  </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': haseremail}">
+                  <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control" id="inputEmail3" ng-model="user.email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': haserpassword}">
+                  <label for="inputPassword3" class="col-sm-3 control-label">Mật khẩu</label>
+
+                  <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputPassword3" ng-model="user.password" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': haserrepassword}">
+                  <label for="inputPassword3" class="col-sm-3 control-label">Nhập lại mật khẩu</label>
+
+                  <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputPassword3" ng-model="user.repassword" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': haseraddress}">
+                  <label for="inputPassword3" class="col-sm-3 control-label">Địa chỉ</label>
+
+                  <div class="col-sm-8">
+                    <select class="form-control" ng-model="user.address">
+                    <option>-- Chọn tỉnh/thành --</option>
+                    <option ng-repeat="province in provinces" value="{{province.name}}">{{province.type}} - {{province.name}}</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-8">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ng-model="check"> Tôi đồng ý với các <a href="">quy định</a>
+                      </label>
+                        <button type="submit" class="btn btn-primary btn-flat pull-right">Đăng ký</button>
+                    </div>
+
+                  </div>
+                </div>
+                
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <div class="col-sm-offset-3 col-sm-7">
+                  <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Đăng nhập bằng Facebook</a>
+                  <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Đăng nhập bằng Google+</a>
+                </div>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+
+    </section>
+    </div>
+    <!-- /.container -->
+  </div>
